@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <title>Update Details</title>
+    <script type = "text/javascript">
+    functionmyfunction() {
+    alert("Details Updated");
+         }
+</script>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center alert alert-danger "> Django Function Based View</h2>
+    <div class="row justify-content-md-center">
+        <div class="col-sm-9">
+           <h4 class="text-center alert alert-info  col-sm"> Update Student Details</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" onclick = "myFunction()"  class="btn btn-success" value="Update">
+                <a href="{% url 'show'%}" class="btn btn-info offset-2">View Student info</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function myFunction() {
+  alert("Your Data Updated Successfully !");
+}
+</script>
+
+</body>
+</html>
